@@ -9,10 +9,7 @@ body {
     background-color: $blanc;
 }
 
-img {
-    object-fit: cover;
-    object-position: center;
-}
+
 
 section {
     margin: 20px;
@@ -79,13 +76,15 @@ section {
 
         .gauche {
 
-            @media (min-width:500px) {}
+            @media (max-width:500px) {
+                display: none;
+            }
 
             ul {
                 li {
                     list-style: none;
                     color: $gray;
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
 
                 .current {
@@ -104,42 +103,39 @@ section {
             @media (min-width:500px) {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
 
             .card {
-                margin: 20px;
+                color: $blanc;
+                margin-bottom: 30px;
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
 
                 &:hover {
+                    display: none;
                     border: 5px solid $blanc;
                     border-radius: 15px;
                 }
 
-                .image {
-                    width: 100%;
-                    overflow: hidden;
+                width: 100%;
+                overflow: hidden;
 
-                    img {
-                        width: 100%;
-                        height: auto;
-                        object-fit: cover;
-                    }
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
                 }
 
-                .text {
+                background-color: $blue;
 
-                    background-color: $blue;
-                    margin-top: 0px;
-
-                    h6 {
-                        color: $blanc;
-                        font-size: 1.2rem;
-                    }
-
-                    span {
-                        color: $blanc;
-                    }
+                h3,
+                p {
+                    position: relative;
+                    left: 5px;
+                    margin-left: 12px;
+                    margin-bottom: 3px;
                 }
             }
         }
@@ -166,6 +162,10 @@ section {
     }
 
     .navig {
+        @media (max-width:500px) {
+            display: none;
+        }
+
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-content: center;
@@ -236,6 +236,14 @@ section {
             width: 100%;
             margin-bottom: 10px;
             border: 1px solid gainsboro;
+        }
+
+        input[type='email'] {
+            margin-left: 10px;
+        }
+
+        input[type='text'] {
+            margin-right: 10px;
         }
 
         select::after {

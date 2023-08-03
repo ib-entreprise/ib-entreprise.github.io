@@ -2,11 +2,6 @@ body {
   background-color: #fff;
 }
 
-img {
-  object-fit: cover;
-  object-position: center;
-}
-
 section {
   margin: 20px;
 }
@@ -57,10 +52,15 @@ section .cards .card {
     grid-template-columns: 1fr 3fr;
   }
 }
+@media (max-width: 500px) {
+  #section2 .ligne .gauche {
+    display: none;
+  }
+}
 #section2 .ligne .gauche ul li {
   list-style: none;
   color: gray;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 #section2 .ligne .gauche ul .current {
   color: rgb(7, 17, 198);
@@ -72,36 +72,35 @@ section .cards .card {
   #section2 .droite .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 #section2 .droite .cards .card {
-  margin: 20px;
+  color: #fff;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(7, 17, 198);
 }
 #section2 .droite .cards .card:hover {
+  display: none;
   border: 5px solid #fff;
   border-radius: 15px;
 }
-#section2 .droite .cards .card .image {
-  width: 100%;
-  overflow: hidden;
-}
-#section2 .droite .cards .card .image img {
+#section2 .droite .cards .card img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-#section2 .droite .cards .card .text {
-  background-color: rgb(7, 17, 198);
-  margin-top: 0px;
-}
-#section2 .droite .cards .card .text h6 {
-  color: #fff;
-  font-size: 1.2rem;
-}
-#section2 .droite .cards .card .text span {
-  color: #fff;
+#section2 .droite .cards .card h3,
+#section2 .droite .cards .card p {
+  position: relative;
+  left: 5px;
+  margin-left: 12px;
+  margin-bottom: 3px;
 }
 #section2 .see-more {
   display: block;
@@ -126,6 +125,11 @@ section .cards .card {
   color: #fff;
   padding: 20px;
   font-size: 1.5em;
+}
+@media (max-width: 500px) {
+  #section2 .navig {
+    display: none;
+  }
 }
 #section2 .navig .left {
   background-color: rgb(7, 17, 198);
@@ -177,6 +181,12 @@ section .cards .card {
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid gainsboro;
+}
+#section3 form input[type=email] {
+  margin-left: 10px;
+}
+#section3 form input[type=text] {
+  margin-right: 10px;
 }
 #section3 form select::after {
   content: "* hello ";
