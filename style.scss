@@ -1,9 +1,9 @@
 // @use 'variables.scss';
 
-$blue :rgb(0, 4, 73);
+$blue :rgb(7, 17, 198);
 $blanc : #fff;
 $orange : #d58f0c;
-
+$gray: gray;
 
 body {
     background-color: $blanc;
@@ -18,13 +18,15 @@ section {
     margin: 20px;
 
 
-    h1 {
+    h1,
+    h3 {
         text-align: center;
     }
 
     .cards {
         display: flex;
         flex-direction: column;
+
 
         .card {
             border-radius: 5px;
@@ -76,20 +78,23 @@ section {
         }
 
         .gauche {
-            @media (max-width:500px) {
-                display: none;
-            }
 
-            .current {
-                columns: $blue;
+            @media (min-width:500px) {}
 
-                ul {
-                    li {
-                        color: $blue;
-                        list-style: none;
-                    }
+            ul {
+                li {
+                    list-style: none;
+                    color: $gray;
+                    font-size: 1.5rem;
                 }
 
+                .current {
+                    color: $blue;
+
+                    span {
+                        font-size: 2.5rem;
+                    }
+                }
             }
         }
     }
@@ -123,6 +128,7 @@ section {
                 }
 
                 .text {
+
                     background-color: $blue;
                     margin-top: 0px;
 
@@ -137,5 +143,134 @@ section {
                 }
             }
         }
+    }
+
+    .see-more {
+        @media (min-width:501px) {
+            display: none;
+        }
+
+        display: block;
+
+
+        h6 {
+            display: flex;
+            justify-content: center;
+
+            background-color: $blue;
+            color: $blanc;
+            align-items: center;
+            font-size: 1.2rem;
+
+        }
+    }
+
+    .navig {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        color: $blanc;
+        padding: 20px;
+        font-size: 1.5em;
+
+        .left {
+            background-color: $blue;
+            height: 40px;
+
+            h6 {
+                position: relative;
+                left: 40%;
+                bottom: 50%;
+            }
+
+        }
+
+        .center {
+            background-color: $blanc;
+            height: 40px;
+            color: $gray;
+
+            h6 {
+                position: relative;
+                left: 40%;
+                bottom: 70%;
+            }
+        }
+
+        .right {
+            background-color: $blue;
+            height: 40px;
+
+            h6 {
+                position: relative;
+                left: 40%;
+                bottom: 50%;
+            }
+        }
+    }
+}
+
+#section3 {
+    @media (min-width:501px) {
+        padding: 100px;
+    }
+
+    form {
+
+        .input {
+            @media (min-width:501px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                // grid-template-rows: 1fr 1fr 4fr;
+                gap: 30px;
+
+            }
+        }
+
+        input,
+        select,
+        textarea {
+            display: block;
+            padding: 15px;
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid gainsboro;
+        }
+
+        select::after {
+            content: "* hello ";
+            color: red;
+            margin-left: 5px;
+        }
+
+        input[type='submit'] {
+            background-color: $blue;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type='file']::before {
+            content: '+';
+            color: $blanc;
+            background-color: $blue;
+            padding: 20px 40px 20px 40px;
+            font-size: 1.4rem;
+        }
+
+        .file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        input[type='submit']:hover {
+            background-color: #0056b3;
+        }
+
     }
 }
