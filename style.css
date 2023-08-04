@@ -23,6 +23,51 @@ section .cards .card {
   }
 }
 
+hr {
+  border: 5px dashed #d58f0c;
+}
+
+@media (min-width: 501px) {
+  nav {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+  }
+  nav #menu-mobile i {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+  }
+  nav ul li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 1.2rem;
+  }
+  nav ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  nav ul li #home {
+    color: #d58f0c;
+  }
+}
+@media (max-width: 501px) {
+  nav ul {
+    display: none;
+  }
+  nav a {
+    color: rgb(7, 17, 198);
+  }
+  nav a i {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 1.8rem;
+  }
+}
+
 #section1 .cards {
   display: flex;
   align-items: center;
@@ -165,6 +210,13 @@ section .cards .card {
     padding: 100px;
   }
 }
+#section3 form label {
+  color: rgb(7, 17, 198);
+}
+#section3 form label::before {
+  content: "*";
+  color: rgb(255, 0, 0);
+}
 @media (min-width: 501px) {
   #section3 form .input {
     display: grid;
@@ -181,6 +233,15 @@ section .cards .card {
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid gainsboro;
+}
+#section3 form input::after,
+#section3 form select::after,
+#section3 form textarea::after {
+  content: "*";
+  color: rgb(255, 0, 0);
+}
+#section3 form input::placeholder {
+  display: none;
 }
 #section3 form input[type=email] {
   margin-left: 10px;

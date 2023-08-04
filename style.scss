@@ -4,6 +4,7 @@ $blue :rgb(7, 17, 198);
 $blanc : #fff;
 $orange : #d58f0c;
 $gray: gray;
+$red: rgb(255, 0, 0);
 
 body {
     background-color: $blanc;
@@ -34,8 +35,66 @@ section {
             justify-content: space-between;
         }
     }
+
 }
 
+
+hr {
+    border: 5px dashed $orange;
+}
+
+nav {
+    @media (min-width:501px) {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+
+        #menu-mobile {
+            i {
+                display: none;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 30px;
+
+            li {
+                list-style: none;
+                margin-right: 20px;
+                font-size: 1.2rem;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                #home {
+                    color: $orange;
+                }
+            }
+        }
+    }
+
+    @media (max-width:501px) {
+
+
+        ul {
+            display: none;
+        }
+
+        a {
+            color: $blue;
+
+            i {
+                position: absolute;
+                right: 30px;
+                top: 30px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
 
 #section1 {
     .cards {
@@ -216,6 +275,14 @@ section {
     }
 
     form {
+        label {
+            color: $blue;
+
+            &::before {
+                content: '*';
+                color: $red;
+            }
+        }
 
         .input {
             @media (min-width:501px) {
@@ -236,6 +303,16 @@ section {
             width: 100%;
             margin-bottom: 10px;
             border: 1px solid gainsboro;
+
+            &::after {
+                content: "*";
+                color: $red;
+            }
+
+        }
+
+        input::placeholder {
+            display: none;
         }
 
         input[type='email'] {
