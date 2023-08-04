@@ -38,11 +38,6 @@ section {
 
 }
 
-
-hr {
-    border: 5px dashed $orange;
-}
-
 nav {
     @media (min-width:501px) {
         display: grid;
@@ -76,23 +71,33 @@ nav {
         }
     }
 
-    @media (max-width:501px) {
 
+    padding: 20px;
 
-        ul {
-            display: none;
+    ul {
+        display: none;
+    }
+
+    a {
+        color: $blue;
+
+        i {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            font-size: 1.8rem;
         }
+    }
 
-        a {
-            color: $blue;
+}
 
-            i {
-                position: absolute;
-                right: 30px;
-                top: 30px;
-                font-size: 1.8rem;
-            }
-        }
+.hero {
+
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        height: auto;
     }
 }
 
